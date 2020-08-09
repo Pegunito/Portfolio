@@ -1,0 +1,8 @@
+ul.values__skills.skills
+    each category in skillsCategories
+        li.skills__item
+            .skills__row
+                .skills__row-title #{category[0]}
+                ul.skills__row-list
+                    each skill in category[1]
+                        li.skills__row-item

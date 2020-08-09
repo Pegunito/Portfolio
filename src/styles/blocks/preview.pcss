@@ -1,0 +1,40 @@
+.preview__info {
+    width: 32%;
+}
+
+.preview__tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+}
+
+.preview__title > h4 {
+    font-size: 30px;
+    margin-bottom: 42px;
+    font-weight: bold;
+}
+
+.preview__desc {
+    font-weight: 600;
+    color: rgba($text-color, .7);
+    line-height: 1.8;
+    margin-bottom: 38px;
+}
+
+.preview__link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  color: $links-color;
+  font-size: 18px;
+  font-weight: bold;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: svg-load('link.svg', fill=$links-color) center center no-repeat;
+    margin-right: 20px;
+  }
+}

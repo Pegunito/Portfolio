@@ -2,7 +2,46 @@
     margin-bottom: 95px;
     display: flex;
     justify-content: space-between;
-    padding-right: 50%;
+    padding-right: 45%;
+}
+
+.slider__round-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid currentColor;
+    position: relative;
+    border-radius: 50%;
+    margin-right: 30px;
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:before {
+        content: "";
+        width: 8px;
+        height: 10px;
+        display: block;
+        background: svg-load('arrow-down.svg', fill=$text-color) center center / contain no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &_prev {
+        &:before {
+        transform: translate(-50%, -50%) rotate(-180deg);
+        }
+    }
+}
+
+.slider__buttons {
+    display: flex;
+}
+
+.slider__content {
+  overflow: hidden;
+  display: flex;
 }
 
 .slider__round-btn {

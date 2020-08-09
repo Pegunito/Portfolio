@@ -46,25 +46,41 @@ block content
 
     section.reviews
       .container
-        .reviews__slider.slider
-          .slider__header
-            .slider__title.section-title
-              h3 Что обо мне говорят
-            .slider__buttons
-              button(type="button").slider__round-btn.slider__round-btn--pointer--right
-              button(type="button").slider__round-btn.slider__round-btn--pointer--left
-          ul.slider__content
-            - for (var i = 0; i < 2; i++)
-              li.slider__item.quote
-                .quote__content
-                  .quote__text
-                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .quote__user.user
-                    .user__display-avatar
-                      .user__display-style
-                        +image('content/user.jpg', 'user__img')
-                      .user__display-data
-                        .user__display-name Дмитрий Ковальчук
-                        .user__display-occ Основатель Loftschool
+        include /components/reviews.pug
+
+    footer.footer
+      .container.footer__container
+        .footer__list
+          .footer__column-left.column
+            .column__copyright
+              p © 2019
+            .column__info
+              .column__name
+                h4 Владимир Астаханов
+              .column__desc
+                p Личный Сайт веб-разработчика
+          .footer__column-middle.column
+                nav.column__menu.menu
+                  - var menuItems = ["Обо мне", "Навыки", "Работы", "Отзывы"];
+                  ul.menu__list
+                      each item in menuItems
+                          li.menu__item
+                              a(href="#").menu__link #{item}
+                .column__text
+                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                .column__socials
+                  - var socials = ["insta", "vk", "github", "envelope"];
+                  ul.hero__socials.socials
+                      each item in socials
+                          li.socials__item
+                              a(href="#").socials__link
+                                  +icon(item, "socials__icon")
+          .footer__column-right.column
+            .column__text
+              p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+            .footer__column-right-name
+              p Martin Golding
+
+
 
           

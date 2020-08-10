@@ -3,8 +3,35 @@
     justify-content: center;
 }
 .menu__link {
+    position: relative;
     text-decoration: none;
     white-space: nowrap;
+    line-height: 3;
+
+    &:hover {
+        color: #4B6FD7;
+        transition: .3s;
+    }
+
+    &:after {
+        background-color: #4B6FD7;
+        display: block;
+        content: "";
+        height: 2px;
+        width: 0%;
+        -webkit-transition: width .3s ease-in-out;
+        -moz--transition: width .3s ease-in-out;
+        transition: width .3s ease-in-out;
+    }
+
+    &:hover:after {
+        width: 100%;
+    }
+
+    &:focus:after {
+        width: 100%;
+    }
+
 }
 
 .menu__item {

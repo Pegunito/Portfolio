@@ -25,18 +25,18 @@ block content
 
           include ./components/skills.pug
 
-                        .skills__list.skill
-                          svg(viewbox="0 0 100 100").skill__cirlce-shape
-                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle--layer--under
-                            circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle--layer--above
-                            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                              stop(offset="0%" stop-color="#5500f2")
-                              stop(offset="100%" stop-color="#8f00ef")
+            .skills__list.skill
+              svg(viewbox="0 0 100 100").skill__cirlce-shape
+                circle(cx="50" cy="50" r="40").skill__circle.skill__circle--layer--under
+                circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle--layer--above
+                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                  stop(offset="0%" stop-color="#5500f2")
+                  stop(offset="100%" stop-color="#8f00ef")
 
-                          .skill__title #{skill}
+              .skill__title #{skill}
 
     section.works
-      .container
+      .container.works__container
         .works__section-title.section-title
           h3 Мои работы
         .works__content
@@ -45,7 +45,7 @@ block content
             include ./components/works__preview.pug
 
     section.reviews
-      .container
+      .container.reviews__container
         include ./components/reviews.pug
 
     footer.footer

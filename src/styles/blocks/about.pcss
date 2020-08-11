@@ -1,32 +1,37 @@
-
-
 .about__content {
+    display: flex;
+    flex-direction: column;
     flex: 1;
 }
 
 .about__container {
     display: flex;
-    padding: 0 12%;
-    padding-bottom: 10%;
+    padding: 10% 16%;
 }
 
 .about__desc {
     font-weight: 600;
-    margin-bottom: 30px;
 }
 
 .about__title {
     font-weight: 700;
     font-size: 36px;
-    margin-bottom: 38px;
     color: $text-color;
+    padding-top: 30px;
 }
 
 .about__ps {
+    position: relative;
+    padding-top: 105px;
     font-style: italic;
-    margin-bottom: 36px;
+
+    &:before {
+        content: url(../images/decor/star.png);
+        position: absolute;
+        left: -31px;
+    }
 }
 
 .about__text-info {
-    margin-bottom: 105px;
+    padding-top: 38px;
 }

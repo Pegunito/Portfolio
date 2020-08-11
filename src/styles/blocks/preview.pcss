@@ -1,16 +1,16 @@
 .preview__info {
-    width: 32%;
+    width: 27%;
 }
 
 .preview__tags {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 26px;
+    padding-bottom: 50px;
 }
 
 .preview__title > h4 {
     font-size: 30px;
-    margin-bottom: 42px;
+    padding-bottom: 44px;
     font-weight: bold;
 }
 
@@ -18,7 +18,7 @@
     font-weight: 600;
     color: rgba($text-color, .7);
     line-height: 1.8;
-    margin-bottom: 38px;
+    padding-bottom: 50px;
 }
 
 .preview__link {
@@ -48,18 +48,23 @@
 
 .preview__pictures {
     position: relative;
-    width: 42%;
-    height: 353px;
+    width: 64.5%;
 
     &:before {
         content: attr(data-slide);
         position: absolute;
-        top: -5%;
+        top: 6%;
         line-height: 1;
         font-size: 400px;
         right: 0;
         font-weight: 800;
-        color: rgba($text-color, .5);
+        color: rgba($text-color, .2);
         transform: translateX(55%);
     }
+}
+
+.preview__info {
+    display: flex;
+    flex-direction: column;
+
 }

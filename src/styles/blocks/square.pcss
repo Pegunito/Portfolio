@@ -3,6 +3,7 @@
   top: 100%;
   right: 0;
   display: flex;
+  background-color: #353e4e;
 }
 
 .square__btns-item {
@@ -25,26 +26,27 @@
         transition: opacity .3s, margin-top .3s;
         opacity: .3;
     }
+
     &:hover {
         &:before {
-        opacity: 1;
+            opacity: 1;
         }
     }
     &_prev {
         &:before {
-        transform: translate(-50%, -50%) rotate(-270deg);
+            transform: translate(-50%, -50%) rotate(-270deg);
         }
         &:active {
         &:before {
             margin-top: 3px;
         }
-        }
     }
-    &_next {
-        &:active {
-        &:before {
-            margin-top: -3px;
-        }
+}
+        &_next {
+            &:active {
+            &:before {
+                margin-top: -3px;
+            }
         }
     }
 }

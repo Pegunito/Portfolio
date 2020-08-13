@@ -50,6 +50,10 @@
     position: relative;
     width: 64.5%;
 
+    @include desktop {
+        width: 62.5%;
+    }
+
     &:before {
         content: attr(data-slide);
         position: absolute;

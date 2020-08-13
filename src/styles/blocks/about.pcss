@@ -7,6 +7,11 @@
 .about__container {
     display: flex;
     padding: 10% 16%;
+
+    @include desktop {
+
+        padding: 398px 100px 252px 61px;
+    }
 }
 
 .about__desc {
@@ -28,7 +33,7 @@
     &:before {
         content: url(../images/decor/star.png);
         position: absolute;
-        left: -31px;
+        left: -50px;
     }
 }
 

@@ -1,5 +1,9 @@
-.works__container {
+.works {
     padding-bottom: 150px;
+
+    @include desktop {
+        padding-bottom: 103px;
+    }
 }
 
 .works__section-title > h3 {
@@ -7,6 +11,10 @@
     font-weight: 700;
     padding-bottom: 92px;
     color: #464d62;
+
+    @include desktop {
+        padding-bottom: 62px;
+    }
 }
 
 .works__preview {

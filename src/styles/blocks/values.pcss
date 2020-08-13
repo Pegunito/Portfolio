@@ -7,20 +7,33 @@
     padding-top: 151px;
     padding-bottom: 179px;
 
+    @include desktop {
+        padding-bottom: 113px;
+    }
+
     &:before {
         content: "";
         position: absolute;
         background: url('~images/decor/bag.jpg') left bottom / contain no-repeat;
         display: block;
-        bottom: 15%;
-        height: 79%;
+        bottom: 16%;
+        height: 55%;
         width: 45%;
-        left: -10%;
+        left: -15%;
+
+        @include desktop {
+            width: 48%;
+            left: -18%;
+        }
     }
 }
 
 .values__info {
-    margin-bottom: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 96px;
+
 }
 
 .values__title > h3 {
@@ -32,7 +45,7 @@
 }
 
 .values__content {
-    padding: 0 28%;
+    width: 49%;
 }
 
 .values__content > p {
@@ -45,8 +58,5 @@
 .values__widget {
     display: flex;
     justify-content: flex-end;
-}
-
-.values__widget-container {
-    
+    padding-left: 30%;
 }

@@ -1,6 +1,6 @@
 .footer {
     background: #1f232d;
-    padding: 88px 0;
+    padding: 88px 20px;
     color: rgba(#fff, .3);
     line-height: 1.7;
 }
@@ -11,6 +11,10 @@
 
 .footer__column-left {
     display: flex;
+
+    @include desktop {
+        flex-direction: column;
+    }
 }
 
 .footer__column-right {
@@ -29,10 +33,14 @@
     color: #ffffff;
     white-space: nowrap;
     padding-right: 50px;
+
+    @include desktop {
+
+    }
 }
 
-.footer__site-desc {
-    width: 55%;
+.footer__name-info {
+    padding-right: 150px;
 }
 
 .footer__name {
@@ -42,7 +50,11 @@
     text-transform: uppercase;
     color: #ffffff;
     padding-bottom: 46px;
-    padding-right: 150px;
+
+    @include desktop {
+        padding-top: 31px;
+        width: 75%;
+    }
 }
 
 .footer__column-middle {

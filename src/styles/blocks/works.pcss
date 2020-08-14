@@ -4,6 +4,10 @@
     @include desktop {
         padding-bottom: 103px;
     }
+
+    @include tablets {
+        padding-bottom: 0;
+    }
 }
 
 .works__section-title > h3 {
@@ -21,4 +25,8 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    @include tablets {
+        flex-direction: column;
+    }
 }

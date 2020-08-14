@@ -28,6 +28,12 @@
     @include desktop {
         padding-left: 55px;
     }
+
+    @include tablets {
+        padding-left: 0px;
+        padding-bottom: 0;
+        padding-top: 61px;
+    }
 }
 
 .footer__copyright {
@@ -60,6 +66,10 @@
         padding-top: 31px;
         width: 75%;
     }
+
+    @include tablets {
+        padding-bottom: 30px;
+    }
 }
 
 .footer__column-middle {
@@ -70,6 +80,10 @@
 
 .footer__column-wrapper {
     display: flex;
+
+    @include tablets {
+        flex-direction: column;
+    }
 }
 
 .footer__menu {
@@ -81,6 +95,10 @@
 
 .footer__site-info > p {
     padding-bottom: 40px;
+
+    @include tablets {
+       padding-bottom: 22px; 
+    }
 }
 
 .footer__author {
@@ -88,5 +106,9 @@
     color: #fff;
     font-style: italic;
     padding-top: 30px;
+
+    @include tablets {
+        padding-top: 22px;  
+    }
     
 }

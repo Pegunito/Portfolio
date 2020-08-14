@@ -2,14 +2,20 @@ header.hero__header.header
     a.header__logo(href="#") ПА
     nav.header__menu.menu
         - var menuItems = ["Обо мне", "Навыки", "Работы", "Отзывы"];
-        ul.menu__list
+        ul.menu__list.menu__list--header
             each item in menuItems
                 li.menu__item
                     a(href="#").menu__link #{item}
     
-    - var socials = ["insta", "vk", "github", "envelope"];
-    ul.hero__socials.socials
-        each item in socials
-            li.socials__item
-                a(href="#").socials__link
-                    +icon(item, "socials__icon")
+    .header__column-wrapper
+        - var socials = ["insta", "vk", "github", "envelope"];
+        ul.hero__socials.socials
+            each item in socials
+                li.socials__item
+                    a(href="#").socials__link
+                        +icon(item, "socials__icon")
+        .header__hamburger.hamburger
+            span.hamburger__plank.hamburger__plank--first
+            span.hamburger__plank.hamburger__plank--second
+            span.hamburger__plank.hamburger__plank--third
+            span.hamburger__plank.hamburger__plank--fourth

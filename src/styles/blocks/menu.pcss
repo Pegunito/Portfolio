@@ -1,7 +1,17 @@
+
+
 .menu__list {
     display: flex;
     justify-content: center;
+
+    @include tablets {
+        &--header {
+            display: none;
+        }
+    }
+
 }
+
 .menu__link {
     position: relative;
     text-decoration: none;

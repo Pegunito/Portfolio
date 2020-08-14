@@ -2,12 +2,20 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @include tablets {
+        padding-right: 66px;
+    }
 }
 
 .slider__header {
     padding-bottom: 101px;
     display: flex;
     justify-content: flex-start;
+
+    @include tablets {
+        padding-bottom: 72px;
+    }
 }
 
 .slider__title > h3 {
@@ -18,6 +26,10 @@
 
     @include desktop {
         padding-right: 77px;
+    }
+
+    @include tablets {
+        padding-right: 30px;
     }
 }
 
@@ -70,6 +82,10 @@
     overflow: hidden;
     display: flex;
     width: 75%;
+
+    @include tablets {
+        width: 100%;
+    }
 }
 
 .slider__round-btn {

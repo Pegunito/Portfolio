@@ -1,0 +1,18 @@
+.user__info
+    .user__avatar
+        .user__avatar-wrapper
+            +image("content/user.jpg", 'user__avatar-pic')
+
+    .user__about
+        -
+            var userinfo = [
+            ['Проживаю:', "Киров"],
+            ['Возраст:', "28 лет"],
+            ['Родился:', "11 ноября 1991"],
+            ];
+
+table.user__data
+    each item in userinfo
+        tr
+            td.user__table-title #{item[0]}
+            td.user__table-content #{item[1]}

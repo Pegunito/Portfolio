@@ -1,0 +1,42 @@
+.user {
+    padding-right: 158px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include desktop {
+        padding-right: 185px;
+    }
+}
+
+.user__avatar {
+    display: flex;
+    justify-content: center;
+}
+
+.user__avatar-wrapper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0px 10px 24px 0 rgba(#000, .3);
+    flex-shrink: 0;
+}
+
+.user__table-title {
+    color: rgba($text-color, .3);
+}
+
+.user__data {
+    padding-top: 67px;
+    font-weight: 600;
+    width: 100%;
+
+    td {
+        padding-bottom: 15px;
+    }
+
+    tr:last-child td {
+        padding-bottom: 0;
+    }
+}

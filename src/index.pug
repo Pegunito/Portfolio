@@ -1,15 +1,68 @@
-include ./mixins.pug
+extends ./main.layout.pug
 
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
-  body
-    .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+block content
+  .welcome-section
+    section.hero
+      .container.hero__container
+        
+        include ./components/header.pug
+
+        include ./components/hero.pug
+
+    section.about
+      .container.about__container
+        .about__user.user
+        
+          include ./components/user.pug
+          
+        include ./components/about.pug
+
+  .middle-section
+    section.values
+      .container.values__container
+
+        include ./components/values.pug
+
+          include ./components/skills.pug
+
+            .skills__list.skill
+              svg(viewbox="0 0 100 100").skill__cirlce-shape
+                circle(cx="50" cy="50" r="40").skill__circle.skill__circle--layer--under
+                circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle--layer--above
+                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                  stop(offset="0%" stop-color="#5500f2")
+                  stop(offset="100%" stop-color="#8f00ef")
+
+              .skill__title #{skill}
+
+    section.works
+      .container.works__container
+        .works__section-title.section-title
+          h3 Мои работы
+        .works__content
+          .works__preview.preview
+
+            include ./components/works__preview.pug
+
+    section.reviews
+      .container.reviews__container
+        include ./components/reviews.pug
+
+    footer.footer
+      include ./components/footer.pug
+
+          
+
+
+
+            
+
+
+
+            
+
+            
+
+
+
+          

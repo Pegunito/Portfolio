@@ -1,0 +1,6 @@
+nav.column__menu.menu
+    - var menuItems = ["Обо мне", "Навыки", "Работы", "Отзывы"];
+    ul.menu__list
+        each item in menuItems
+            li.menu__item
+                a(href="#").menu__link #{item}

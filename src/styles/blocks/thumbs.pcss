@@ -3,13 +3,22 @@
   right: 0;
   bottom: 0;
   width: 178px;
+
+  @include phones {
+    display: none;
+  }
 }
 
 .thumbs__item {
   height: 100px;
   transition: .2s;
-   &.active,
-   &:hover {
+
+  @include phones {
+    height: 60px;
+  }
+
+  &.active,
+  &:hover {
     outline: 3px solid #008BFF;
   }
 }

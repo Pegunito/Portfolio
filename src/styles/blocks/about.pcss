@@ -15,10 +15,20 @@
     @include tablets {
         padding: 260px 20px 148px 20px;
     }
+
+    @include phones {
+        padding: 0px 0px 105px 0px;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-.about__desc {
+.about__desc > p {
     font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    color: #464d62;
+    opacity: 0.5;
 }
 
 .about__title {
@@ -26,6 +36,10 @@
     font-size: 36px;
     color: $text-color;
     padding-top: 30px;
+
+    @include phones {
+        width: 40%;
+    }
 }
 
 .about__ps {
@@ -38,8 +52,16 @@
         position: absolute;
         left: -50px;
     }
+
+    @include phones {
+        padding-top: 48px;
+    }
 }
 
 .about__text-info {
     padding-top: 38px;
+
+    @include phones {
+        padding-top: 52px;
+    }
 }

@@ -15,6 +15,10 @@
         padding-top: 118px;
     }
 
+    @include phones {
+        padding-top: 96px;
+    }
+
     &:before {
         content: "";
         position: absolute;
@@ -47,6 +51,11 @@
         padding-bottom: 60px;
     }
 
+    @include phones {
+        text-align: start;
+        padding-bottom: 58px;
+    }
+
 }
 
 .values__title {
@@ -58,15 +67,16 @@
         width: 48%;
         padding-bottom: 31px;
     }
+
+    @include phones {
+        width: 100%;
+        padding-bottom: 31px;
+    }
 }
 
 .values__title > h3 {
     font-size: 30px;
     font-weight: 700;
-
-    @include tablets {
-
-    }
 }
 
 .values__content {
@@ -74,6 +84,10 @@
 
     @include tablets {
         width: 66%;
+    }
+
+    @include phones {
+        width: 100%;
     }
 }
 

@@ -1,4 +1,4 @@
-.container.footer__container
+.container.footer__container.footer__container--hd
     .footer__column-left
         .footer__copyright
             p &copy; 2020
@@ -14,17 +14,22 @@
                 each item in menuItems
                     li.menu__item
                         a(href="#").menu__link #{item}
-        .footer__site-info
-            p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-        .footer__socials
-            - var socials = ["insta", "vk", "github", "envelope"];
-            ul.hero__socials.socials
-                each item in socials
-                    li.socials__item
-                        a(href="#").socials__link
-                            +icon(item, "socials__icon")
-    .footer__column-right
-        .footer__text
-            p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-        .footer__author
-            p Martin Golding
+        .footer__column-wrapper
+            .footer__site-info
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                .footer__socials
+                    - var socials = ["insta", "vk", "github", "envelope"];
+                    ul.hero__socials.socials
+                        each item in socials
+                            li.socials__item
+                                a(href="#").socials__link
+                                    +icon(item, "socials__icon")
+            .footer__column-right
+                .footer__text
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                .footer__author
+                    p Martin Golding
+
+// mobile
+
+.container.footer__container.footer__container--desktop

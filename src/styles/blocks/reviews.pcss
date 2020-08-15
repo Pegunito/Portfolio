@@ -1,17 +1,22 @@
 .reviews {
-  background: url('~images/bg/Budda.png') center top / cover no-repeat;
+    background: url('~images/bg/Budda.png') center top / cover no-repeat;
 }
 
 .reviews__container {
-  padding-top: 258px;
-  padding-bottom: 424px;
+    padding-top: 258px;
+    padding-bottom: 424px;
 
   @include desktop {
-    padding-top: 225px;
+      padding-top: 225px;
   }
 
   @include tablets {
-    padding-top: 247px;
-    padding-bottom: 449px;
-  }
+      padding-top: 247px;
+      padding-bottom: 449px;
+    }
+
+    @include phones {
+      padding-top: 200px;
+      padding-bottom: 113px;
+    }
 }

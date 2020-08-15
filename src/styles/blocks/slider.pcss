@@ -6,6 +6,16 @@
     @include tablets {
         padding-right: 66px;
     }
+
+    @include phones {
+        padding-right: 0;
+    }
+
+    @include phones {
+        text-align: center;
+        align-items: center;
+
+    }
 }
 
 .slider__header {
@@ -15,6 +25,15 @@
 
     @include tablets {
         padding-bottom: 72px;
+    }
+
+    @include phones {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include phones {
+        align-items: center;
     }
 }
 
@@ -30,6 +49,10 @@
 
     @include tablets {
         padding-right: 30px;
+    }
+
+    @include phones {
+        padding-right: 0;
     }
 }
 

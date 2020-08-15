@@ -8,6 +8,17 @@
     @include tablets {
         padding-bottom: 0;
     }
+
+    @include phones {
+        text-align: center;
+    }
+}
+
+.works__container {
+    
+    @include phones {
+        width: 100%
+    }
 }
 
 .works__section-title > h3 {
@@ -18,6 +29,10 @@
 
     @include desktop {
         padding-bottom: 62px;
+    }
+
+    @include phones {
+        padding-bottom: 30px;
     }
 }
 

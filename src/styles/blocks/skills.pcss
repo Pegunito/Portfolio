@@ -40,8 +40,15 @@
 }
 
 .skills__row-list {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
+
+    @include phones {
+        display: block;
+        column-count: 2;
+        column-gap: 30px;
+    }
 }
 
 .skills__row-title {

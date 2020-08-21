@@ -1,5 +1,9 @@
 .slider {
     width: 80%;
+
+    @include tablets {
+        width: 100%;
+    }
 }
 
 .slider__header {
@@ -86,9 +90,7 @@
 }
 
 .slider__content {
-    padding-left: 96px;
     overflow: hidden;
-
 }
 
 .slider__round-btn {

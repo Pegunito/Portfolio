@@ -11,7 +11,7 @@ new Vue({
         return {
             reviews: [],
             flickityOptions: {
-                groupCells: true,
+                groupCells: 2,
                 prevNextButtons: false,
                 pageDots: false,
             }
@@ -33,6 +33,7 @@ new Vue({
         }
     },
     mounted() {
+
         this.requiredPhotos();
 
         var ref = this.$refs;

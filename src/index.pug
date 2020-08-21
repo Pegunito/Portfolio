@@ -28,15 +28,14 @@ block content
         .values__img
           +image("decor/bag.jpg", 'user__avatar-pic')
         .values__widget
-          include ./templates/components/skills.pug
+          #skills-component
 
     section.works
       .container.works__container
         .works__section-title.section-title
           h3 Мои работы
         .works__preview.preview
-
-            include ./templates/components/works__preview.pug
+          #preview-component
 
     section.reviews
       .container.reviews__container

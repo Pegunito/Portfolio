@@ -1,0 +1,53 @@
+script(type="text/x-template")#works-content
+    div
+        .works__section-title.section-title
+            h3.works__title.title Мои работы
+        .works__content
+            pictures(
+                :currentIndex="currentIndex"
+                :works="works"
+                :currentWorks="currentWork"
+            )
+            info
+
+script(type="text/x-template")#works-pictures
+    .works__pictures
+        .works__image-wrap
+            img(:src="currentWork.photo").works__image
+            
+        .works__index-wrap
+            .works__index {{currentIndex+1}}
+        preview(
+            :works="works"
+            :currentIndex="currentIndex"
+        )
+
+script(type="text/x-template")#works-info
+    .works__info
+        tags
+        .works__info-title-wrap
+            .works__info-title Сайт школы образования
+        .works__info-desc
+            p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        .works__info-link
+            a(href="#").iconed-link Посмотреть сайт
+
+script(type="text/x-template")#works-tags
+    ul.works__info-tags-list
+        each item in ['HTML', 'CSS', 'Javascript']
+            li.works__info-tags-item
+                .tag #{item}
+
+script(type="text/x-template")#works-preview
+    .works__preview
+        ul.works__preview-list
+            li.works__preview-item
+                +image('content/slider-2.jpg', 'works__preview-img active')
+            li.works__preview-item
+                +image('content/slider-3.jpg', 'works__preview-img')
+        btns
+
+script(type="text/x-template")#works-btns
+    .works__btn-wrap
+        button.works__btn.works__btn-prev <
+        button.works__btn.works__btn-next >

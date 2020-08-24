@@ -6,9 +6,12 @@ script(type="text/x-template")#works-content
             pictures(
                 :currentIndex="currentIndex"
                 :works="works"
-                :currentWorks="currentWork"
+                :currentWork="currentWork"
+                @slide="changeSlide"
             )
-            info
+            info(
+                :currentWork="currentWork"
+            )
 
 script(type="text/x-template")#works-pictures
     .works__pictures
@@ -20,34 +23,38 @@ script(type="text/x-template")#works-pictures
         preview(
             :works="works"
             :currentIndex="currentIndex"
+            :currentWork="currentWork"
+            @slide="handleSlide"
+
         )
 
 script(type="text/x-template")#works-info
     .works__info
-        tags
+        tags(:currentTags="currentWork.skills")
         .works__info-title-wrap
-            .works__info-title Сайт школы образования
+            .works__info-title {{currentWork.title}}
         .works__info-desc
-            p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            p {{currentWork.desc}}
         .works__info-link
-            a(href="#").iconed-link Посмотреть сайт
+            a(:href="currentWork.link").iconed-link Посмотреть сайт
 
 script(type="text/x-template")#works-tags
     ul.works__info-tags-list
-        each item in ['HTML', 'CSS', 'Javascript']
-            li.works__info-tags-item
-                .tag #{item}
+        li.works__info-tags-item(v-for="tag in tags")
+            .tag {{tag}}
 
 script(type="text/x-template")#works-preview
     .works__preview
         ul.works__preview-list
-            li.works__preview-item
-                +image('content/slider-2.jpg', 'works__preview-img active')
-            li.works__preview-item
-                +image('content/slider-3.jpg', 'works__preview-img')
-        btns
+            li.works__preview-item(v-for="work in works")
+                img(:src="work.photo" :class="{active:currentWork.id === work.id}").works__preview-img
+        btns(
+            :currentIndex="currentIndex"
+            :works="works"
+            @changeSlide="slideWork"
+        )
 
 script(type="text/x-template")#works-btns
     .works__btn-wrap
-        button.works__btn.works__btn-prev <
-        button.works__btn.works__btn-next >
+        button(@click="slide('next')" :disabled="disableNext").works__btn.works__btn--next
+        button(@click="slide('prev')" :disabled="disablePrev").works__btn.works__btn--prev 

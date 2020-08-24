@@ -1,9 +1,26 @@
 .works__container {
     padding-bottom: 123px;
+
+    @include desktop {
+        padding-bottom: 53px;
+    }
+
+    @include phones {
+        width: 100%;
+    }
 }
 
 .works__section-title {
     padding-bottom: 90px;
+
+    @include desktop {
+        padding-bottom: 62px;
+    }
+
+    @include phones {
+        padding-bottom: 30px;
+        text-align: center;
+    }
 }
 
 .works__title {
@@ -15,19 +32,44 @@
 
 .works__content {
     display: flex;
+
+    @include tablets {
+        flex-direction: column;
+    }
 }
 
 .works__pictures {
-    width: 60%;
+    width: 80%;
+    height: 100%;
     padding-right: 154px;
     position: relative;
-    height: 100%;
+
+    @include desktop {
+        padding-right: 106px;
+    }
+
+    @include tablets {
+        width: 100%;
+    }
+    
+    @include phones {
+       padding-right: 0;
+       padding-bottom: 60px;
+    }
 }
 
 .works__image-wrap {
     width: 100%;
-    height: 400px;
+    height: 480px;
     position: relative;
+
+    @include phones {
+    height: 250px;
+    }
+
+    @include phones {
+        height: 300px;
+    }
 }
 
 .works__image {
@@ -45,21 +87,48 @@
     right: 2%;
     top: 36%;
     opacity: .6;
+
+    @include desktop {
+        right: -2%;
+        top: 24%;
+    }
+
+    @include phones {
+        display: none;
+    }
 }
 
 .works__preview {
     position: absolute;
-    bottom: 0%;
-    right: 28%;
+    bottom: 1.5%;
+    right: 15.5%;
+
+    @include desktop {
+        bottom: 18.5%;
+        right: 13%;
+    }
+
+    @include phones {
+        bottom: 43%;
+        right: 0%;
+    }
 }
 
 .works__preview-list {
     display: flex;
     flex-direction: column;
+
+    @include phones {
+        display: none;
+    }
 }
 
 .works__preview-item {
-    height: 100px;
+    height: 120px;
+
+    @include desktop {
+        height: 95px;
+    }
 
     &:hover {
         cursor: pointer;
@@ -82,28 +151,125 @@
     display: flex;
     position: absolute;
     bottom: -14%;
-    right: 28%;
+    right: 0;
+
+    @include desktop {
+        bottom: -18%;
+    }
 }
 
 .works__btn {
-    color: #fff;
-    background-color: #353e4e;
     width: 50px;
     height: 50px;
+    background: #2d3c4e;
+    display: block;
+    position: relative;
 
-    &:hover {
-        color: #4B6FD7;
+    &--next {
+        &:before {
+            content: "";
+            background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
+            display: block;
+            width: 8px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-270deg);
+            transition: opacity .3s, margin-top .3s;
+            opacity: .3;
+        }
+
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+        &_prev {
+            &:before {
+                transform: translate(-50%, -50%) rotate(-270deg);
+            }
+        &:active {
+            &:before {
+                margin-top: 3px;
+            }
+        }
+    }
+        &_next {
+            &:active {
+                &:before {
+                    margin-top: -3px;
+                }
+            }
+        }
+    }
+
+    &--prev {
+        &:before {
+            content: "";
+            background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
+            display: block;
+            width: 8px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            transition: opacity .3s, margin-top .3s;
+            opacity: .3;
+        }
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+        &_prev {
+            &:before {
+                transform: translate(-50%, -50%) rotate(-270deg);
+            }
+        &:active {
+            &:before {
+                margin-top: 3px;
+            }
+        }
+    }
+        &_next {
+            &:active {
+                &:before {
+                    margin-top: -3px;
+                }
+            }
+        }
     }
 }
 
 .works__info {
     width: 40%;
+
+    @include tablets {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    @include phones {
+        padding-left: 10%;
+        align-items: flex-start;
+        text-align: start;
+        width: 90%;
+    }
 }
 
 .works__info-tags-list {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 50px;
+
+    @include phones {
+        flex-wrap: nowrap;
+    }
 }
 
 .works__info-tags-item {
@@ -115,6 +281,10 @@
     &:last-child{
         margin-right: 0;
     }
+
+    @include phones {
+        margin-right: 12px;
+    }
 }
 
 .works__info-title {
@@ -123,6 +293,13 @@
     line-height: 48px;
     color: #464d62;
     padding-bottom: 44px;
+    padding-right: 30%;
+
+    @include tablets {
+        padding-right: 0;
+        padding-bottom: 30px;
+
+    }
 }
 
 .works__info-desc {
@@ -131,4 +308,39 @@
     line-height: 30px;
     color: #464d62;
     padding-bottom: 50px;
+    padding-right: 30%;
+
+    @include tablets {
+        padding: 32px 18%;
+
+    }
+
+    @include phones {
+        padding: 0 0;
+    }
+}
+
+.works__info-link {
+    @include phones {
+        padding-left: 6%;
+    }
+}
+
+.iconed-link {
+    position: relative;
+    font-weight: 700;
+    line-height: 48px;
+    color: #586ed3;
+    text-decoration: none;
+
+    &:before {
+        content: url(../images/decor/link.png);;
+        position: absolute;
+        left: -15%;
+        bottom: -70%;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

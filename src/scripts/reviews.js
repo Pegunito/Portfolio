@@ -11,7 +11,7 @@ new Vue({
         return {
             reviews: [],
             flickityOptions: {
-                groupCells: 2,
+                groupCells: true,
                 prevNextButtons: false,
                 pageDots: false,
             }
@@ -62,4 +62,4 @@ new Vue({
     created() {
         this.reviews = require("../data/reviews.json")
     }
-})
+});

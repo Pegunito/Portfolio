@@ -1,71 +1,81 @@
-.skill {
-    position: relative;
-    width: 166px;
-    height: 166px;
+.skills {
+	@include phones {
+		text-align: center;
+	}
 }
-
-.skill__circle {
-    fill: transparent;
-
-    &--layer--under {
-        stroke: #eaeaea;
-        stroke-width: 5px;
-  }
-    &--layer--above {
-        stroke-width: 12px;
-        stroke-dasharray: 251;
-        stroke-dashoffset: 100;
-  }
-}
-
-.skill__title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 48px;
-    text-transform: uppercase;
-    opacity: 0.5;
-    color: #464d62;
-}
-
 .skills__item {
-    margin-bottom: 40px;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
+	margin-bottom: 30px;
+	@include tablets {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
+.skill {
+	position: relative;
+	width: 166px;
+	height: 166px;
+	@include tablets {
+		width: 135px;
+		height: 135px;
+	}
+}
+.skill__circle {
+	fill: transparent;
+	&_under {
+		stroke: #eaeaea;
+		stroke-width: 5px;
+	}
+	&_above {
+		stroke-width: 12px;
+		stroke-dasharray: 251;
+		stroke-dashoffset: 100;
+	}
+}
+.skill__circle-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-weight: bold;
+	font-size: 18px;
+	color: rgba(16, 0, 34, 0.5);
+	padding: 14px;
+	@include phones {
+		font-size: 16px;
+	}
+}
+.skills-row {
+	@include tablets {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.skills-row__title {
+	margin-bottom: 26px;
+	font-size: 24px;
+	font-weight: 700;
+	color: #222427;
+	@include tablets {
+		display: none;
+	}
+	@include phones {
+		display: block;
+	}
+}
+.skills-row__list {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-between;
 
-.skills__row-list {
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
+	@include tablets {
+		justify-content: space-around;
+	}
 
     @include phones {
-        display: block;
-        column-count: 2;
-        column-gap: 30px;
-    }
-}
-
-.skills__row-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #464d62;
-    margin-bottom: 26px;
-}
-
-.skills__row-item {
-    margin-right: 15px;
-
-    &:first-child {
-        margin-right: 0;
-    }
-
-    @include phones {
-        margin-right: 0;
+        width: 90%;
     }
 }

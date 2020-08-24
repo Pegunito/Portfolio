@@ -15,7 +15,7 @@ script(type="text/x-template")#reviews
                     .quote__user.user
                         .user__display-avatar
                             .user__display-style
-                                img(:src="`/${review.photo}`").user__avatar-img
+                                img(:src="review.photo").user__avatar-img
                             .user__display-data
                                 .user__display-name {{review.author}}
                                 .user__display-occ {{review.occ}}

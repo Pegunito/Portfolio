@@ -1,27 +1,33 @@
 .quote {
-    flex-shrink: 0;
-    padding-right: 30px;
-    width: 50%;
+  padding-left: 158px;
+  width: 50%;
 
-    &:last-child {
-      padding-right: 0;
-    }
+  @include phones {
+    padding-left: 0;
+    width: 100%;
+  }
 }
 
 .quote__content {
-    padding-left: 24%;
-    position: relative;
+      position: relative;
+
 
   &:before {
-    content: "";
-    display: block;
-    width: 18%;
-    height: 37%;
-    opacity: .05;
-    background: svg-load('quote.svg', fill=$text-color) center center / contain no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
+      content: "";
+      display: block;
+      width: 18%;
+      height: 37%;
+      opacity: .05;
+      background: svg-load('quote.svg', fill=$text-color) center center / contain no-repeat;
+      position: absolute;
+      top: 0;
+      left: -84px;
+
+      @include tablets {
+        top: -10%;
+        left: 8%;
+        width: 10%;
+    }
   }
 }
 

@@ -1,5 +1,20 @@
 .socials {
     display: flex;
+
+    @include tablets {
+        padding-right: 93px;
+    }
+
+    @include phones {
+
+        &--header {
+            display: none;
+        }
+    }
+
+    @include phones {
+        padding-right: 0;
+    }
 }
 
 .socials__icon {

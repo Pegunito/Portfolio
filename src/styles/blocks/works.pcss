@@ -1,24 +1,339 @@
-.works {
-    padding-bottom: 150px;
+.works__container {
+    padding-bottom: 123px;
 
     @include desktop {
-        padding-bottom: 103px;
+        padding-bottom: 53px;
+    }
+
+    @include phones {
+        width: 100%;
     }
 }
 
-.works__section-title > h3 {
-    font-size: 36px;
-    font-weight: 700;
-    padding-bottom: 92px;
-    color: #464d62;
+.works__section-title {
+    padding-bottom: 90px;
 
     @include desktop {
         padding-bottom: 62px;
     }
+
+    @include phones {
+        padding-bottom: 30px;
+        text-align: center;
+    }
+}
+
+.works__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #464d62;
+    line-height: 48px;
+}
+
+.works__content {
+    display: flex;
+
+    @include tablets {
+        flex-direction: column;
+    }
+}
+
+.works__pictures {
+    width: 80%;
+    height: 100%;
+    padding-right: 154px;
+    position: relative;
+
+    @include desktop {
+        padding-right: 106px;
+    }
+
+    @include tablets {
+        width: 100%;
+    }
+    
+    @include phones {
+       padding-right: 0;
+       padding-bottom: 60px;
+    }
+}
+
+.works__image-wrap {
+    width: 100%;
+    position: relative;
+}
+
+.works__index-wrap {
+    position: absolute;
+    font-size: 400px;
+    font-weight: 800;
+    line-height: 48px;
+    color: #e6e6e6;
+    right: 0%;
+    top: 45%;
+    opacity: .6;
+    z-index: -5;
+
+    @include desktop {
+        right: -6%;
+        top: 30%;
+    }
+
+    @include phones {
+        display: none;
+    }
 }
 
 .works__preview {
+    position: absolute;
+    bottom: 1.5%;
+    right: 15.5%;
+
+    @include desktop {
+        bottom: .5%;
+        right: 13.5%;
+    }
+
+    @include phones {
+        bottom: 43%;
+        right: 0%;
+    }
+}
+
+.works__preview-list {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+
+    @include phones {
+        display: none;
+    }
+}
+
+.works__preview-item {
+    height: 120px;
+
+    @include desktop {
+        height: 100px;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.works__preview-img {
+    &:hover {
+        outline: 3px solid #008BFF;
+    }
+}
+
+.active {
+    outline: 3px solid #008BFF;
+    position: relative;
+    z-index: 5;
+}
+
+.works__btn-wrap {
+    display: flex;
+    position: absolute;
+    bottom: -14%;
+    right: 0;
+
+    @include desktop {
+        bottom: -17%;
+        right: -1.5%;
+    }
+
+    @include phones {
+        top: 43px;
+    }
+}
+
+.works__btn {
+    width: 50px;
+    height: 50px;
+    background: #2d3c4e;
+    display: block;
+    position: relative;
+
+    &--next {
+        &:before {
+            content: "";
+            background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
+            display: block;
+            width: 8px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-270deg);
+            transition: opacity .3s, margin-top .3s;
+            opacity: .3;
+        }
+
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+        &_prev {
+            &:before {
+                transform: translate(-50%, -50%) rotate(-270deg);
+            }
+        &:active {
+            &:before {
+                margin-top: 3px;
+            }
+        }
+    }
+        &_next {
+            &:active {
+                &:before {
+                    margin-top: -3px;
+                }
+            }
+        }
+    }
+
+    &--prev {
+        &:before {
+            content: "";
+            background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
+            display: block;
+            width: 8px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            transition: opacity .3s, margin-top .3s;
+            opacity: .3;
+        }
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+        &_prev {
+            &:before {
+                transform: translate(-50%, -50%) rotate(-270deg);
+            }
+        &:active {
+            &:before {
+                margin-top: 3px;
+            }
+        }
+    }
+        &_next {
+            &:active {
+                &:before {
+                    margin-top: -3px;
+                }
+            }
+        }
+    }
+}
+
+.works__info {
+    width: 40%;
+
+    @include tablets {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    @include phones {
+        padding-left: 10%;
+        align-items: flex-start;
+        text-align: start;
+        width: 90%;
+    }
+}
+
+.works__info-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+
+    @include phones {
+        flex-wrap: nowrap;
+    }
+}
+
+.works__info-tags-item {
+    padding: 17px 23px;
+    border-radius: 22px;
+    background-color: #F3F6F9;
+    margin-right: 15px;
+
+    &:last-child{
+        margin-right: 0;
+    }
+
+    @include phones {
+        margin-right: 12px;
+    }
+}
+
+.works__info-title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 48px;
+    color: #464d62;
+    padding-bottom: 44px;
+    padding-right: 30%;
+
+    @include tablets {
+        padding-right: 0;
+        padding-bottom: 30px;
+
+    }
+}
+
+.works__info-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #464d62;
+    padding-bottom: 50px;
+    padding-right: 30%;
+
+    @include desktop {
+        padding-right: 17%;
+    }
+
+    @include tablets {
+        padding: 32px 18%;
+
+    }
+
+    @include phones {
+        padding: 0 0;
+    }
+}
+
+.works__info-link {
+    padding-left: 6%;
+}
+
+.iconed-link {
+    position: relative;
+    font-weight: 700;
+    line-height: 48px;
+    color: #586ed3;
+    text-decoration: none;
+
+    &:before {
+        content: url(../images/decor/link.png);;
+        position: absolute;
+        left: -15%;
+        bottom: -70%;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

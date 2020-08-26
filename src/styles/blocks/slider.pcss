@@ -1,13 +1,29 @@
-.reviews__slider {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.slider {
+    width: 80%;
+
+    @include tablets {
+        width: 100%;
+    }
 }
 
 .slider__header {
     padding-bottom: 101px;
     display: flex;
     justify-content: flex-start;
+
+    @include tablets {
+        padding-bottom: 72px;
+    }
+
+    @include phones {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include phones {
+        align-items: center;
+        text-align: center;
+    }
 }
 
 .slider__title > h3 {
@@ -18,6 +34,15 @@
 
     @include desktop {
         padding-right: 77px;
+    }
+
+    @include tablets {
+        padding-right: 30px;
+    }
+
+    @include phones {
+        padding-right: 0;
+        padding-bottom: 27px;
     }
 }
 
@@ -68,8 +93,6 @@
 
 .slider__content {
     overflow: hidden;
-    display: flex;
-    width: 75%;
 }
 
 .slider__round-btn {

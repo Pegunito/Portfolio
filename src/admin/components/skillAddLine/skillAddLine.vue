@@ -17,7 +17,14 @@
 <script>
 import input from "../input";
 import button from "../button";
+
 export default {
+  mixins: [SimpleVueValidator.mixin],
+  validators: {
+    'app-input': function(value) {
+      return Validator.value(value).required();
+      },
+  },
   props: {
     blocked: Boolean
   },

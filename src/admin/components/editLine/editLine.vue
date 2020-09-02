@@ -10,9 +10,9 @@
       <div class="input">
         <app-input
           placeholder="Название новой группы"
-          :value="value"
           v-model="newGroup.name"
           :errorMessage="validation.firstError('newGroup.name')"
+          :value="value"
           @input="$emit('input', $event)"
           @keydown.native.enter="onApprove"
           autofocus="autofocus"
@@ -41,11 +41,6 @@ export default {
         return Validator.value(val).required("Заполните строку");
       }
   },
-  data: () => ({
-    newGroup: {
-      name: "",
-    }
-  }),
   props: {
     value: {
       type: String,
@@ -60,6 +55,9 @@ export default {
   },
   data() {
     return {
+      newGroup: {
+        name: ""
+      },
       editmode: this.editModeByDefault,
       title: this.value
     };

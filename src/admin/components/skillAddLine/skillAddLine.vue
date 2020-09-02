@@ -28,12 +28,10 @@ export default {
   validators: {
     "user.skillTitle": val => {
       return Validator.value(val).required("Заполните строку");
-    }
-  },
-    validators: {
+    },
     "user.percentage": val => {
-      return Validator.value(val).integer("Введите цифры");
-    }
+      return Validator.value(val).required("Заполните строку");
+    },
   },
   data: () => ({
     user: {

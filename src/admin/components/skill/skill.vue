@@ -10,7 +10,8 @@
 
   <div class="skill-component" v-else>
     <div class="title">
-      <app-input noSidePaddings v-model="currentSkill.title" />
+      <app-input noSidePaddings v-model="currentSkill.title"
+      :errorMessage="validation.firstError('currentSkill.title')" />
     </div>
     <div class="percent">
       <app-input v-model="currentSkill.percent" type="number" min="0" max="100" maxlength="3" />
@@ -23,11 +24,18 @@
 </template>
 
 <script>
-
+import {Validator, mixin} from 'simple-vue-validator';
 import input from "../input";
 import icon from "../icon";
 
 export default {
+
+    mixins: [mixin],
+  validators: {
+    "currentSkill.title": val => {
+      return Validator.value(val).required("Заполните строку");
+    }
+  },
   props: {
     skill: {
       type: Object,

@@ -6,12 +6,13 @@
         <icon symbol="pencil" grayscale @click="editmode = true"></icon>
       </div>
     </div>
-    <div v-else class="title">
+    <div v-else class="title" @submit.prevent="handleSubmit">
       <div class="input">
         <app-input
           placeholder="Название новой группы"
           :value="value"
-          :errorText="errorText"
+          v-model="newGroup.name"
+          :errorMessage="validation.firstError('newGroup.name')"
           @input="$emit('input', $event)"
           @keydown.native.enter="onApprove"
           autofocus="autofocus"
@@ -31,7 +32,20 @@
 </template>
 
 <script>
+import {Validator, mixin} from 'simple-vue-validator';
 export default {
+
+  mixins: [mixin],
+    validators: {
+      "newGroup.name": val => {
+        return Validator.value(val).required("Заполните строку");
+      }
+  },
+  data: () => ({
+    newGroup: {
+      name: "",
+    }
+  }),
   props: {
     value: {
       type: String,
@@ -51,6 +65,11 @@ export default {
     };
   },
   methods: {
+
+    handleSubmit() {
+      console.log('submit');
+    },
+
     onApprove() {
       if (this.title.trim() === this.value.trim()) {
         this.editmode = false;

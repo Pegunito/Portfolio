@@ -1,12 +1,15 @@
 <template>
   <div 
     :class="['skill-add-line-component', {blocked: blocked}]"
+    
   >
     <div class="title">
-      <app-input placeholder="Новый навык" />
+      <app-input placeholder="Новый навык" v-model="user.skillTitle" 
+      :errorMessage="validation.firstError('user.skillTitle')" />
     </div>
     <div class="percent">
-      <app-input type="number" min="0" max="100" maxlength="3" />
+      <app-input type="number" v-model="user.percentage" requared min="0" max="100" maxlength="3"
+      :errorMessage="validation.firstError('user.percentage')" />
     </div>
     <div class="button">
       <round-button type="round" />
@@ -15,16 +18,29 @@
 </template>
 
 <script>
+import {Validator, mixin} from 'simple-vue-validator';
 import input from "../input";
 import button from "../button";
 
 export default {
-  mixins: [SimpleVueValidator.mixin],
+
+  mixins: [mixin],
   validators: {
-    'app-input': function(value) {
-      return Validator.value(value).required();
-      },
+    "user.skillTitle": val => {
+      return Validator.value(val).required("Заполните строку");
+    }
   },
+    validators: {
+    "user.percentage": val => {
+      return Validator.value(val).integer("Введите цифры");
+    }
+  },
+  data: () => ({
+    user: {
+      skillTitle: "",
+      percentage: "",
+    }
+  }),
   props: {
     blocked: Boolean
   },

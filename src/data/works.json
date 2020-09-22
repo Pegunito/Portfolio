@@ -1,26 +1,18 @@
 [
     {
       "id": 1,
-      "title": "Сайт школы образования",
-      "skills": "Html, Css, JavaScript",
+      "title": "Lion bank",
+      "skills": "Html, Css",
       "photo": "slider-1.jpg",
-      "link": "//google.com",
-      "desc": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+      "link": "https://pegunito.github.io/Lion-Bank/",
+      "desc": "Данную работу я выполнил в рамках программы обучения школы Loftschool. В работе применялись технологии HTML и Css. Данная версия сайта только для desktop."
     },
     {
       "id": 2,
-      "title": "Сайт школы образования",
+      "title": "Батончики 'Chocco'",
       "skills": "Html, Css, JavaScript",
       "photo": "slider-2.jpg",
-      "link": "//yandex.ru",
-      "desc": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
-    },
-    {
-      "id": 3,
-      "title": "Сайт школы образования",
-      "skills": "Html, Css, JavaScript",
-      "photo": "slider-3.jpg",
-      "link": "//rambler.ru",
-      "desc": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+      "link": "https://pegunito.github.io/Chocco/",
+      "desc": "В данной работе я впервые познакомился с JavaScript, адаптивной вёрсткой, yandex api, youtube api, а так же с библиотекой Jquery."
     }
   ]

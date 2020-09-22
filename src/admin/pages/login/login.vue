@@ -21,7 +21,7 @@
           />
         </div>
         <div class="btn">
-          <app-button :disabled="isSubmitDisabled" typeAttr="submit" title="Отправить" />
+          <app-button title="Отправить" />
         </div>
       </form>
     </div>

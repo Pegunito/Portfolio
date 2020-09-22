@@ -86,11 +86,11 @@
 
 .works__preview {
     position: absolute;
-    bottom: 1.5%;
+    bottom: 0;
     right: 15.5%;
 
     @include desktop {
-        bottom: .5%;
+        bottom: 0;
         right: 13.5%;
     }
 
@@ -136,11 +136,11 @@
 .works__btn-wrap {
     display: flex;
     position: absolute;
-    bottom: -14%;
+    bottom: -21%;
     right: 0;
 
     @include desktop {
-        bottom: -17%;
+        bottom: -25%;
         right: -1.5%;
     }
 
@@ -238,6 +238,7 @@
     width: 40%;
 
     @include tablets {
+        padding-top: 10%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -316,7 +317,30 @@
 }
 
 .works__info-link {
+    animation: link 4s linear infinite;
     padding-left: 6%;
+}
+
+@keyframes link {
+      0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+      transform: rotate(0deg);
+  }
+
+  75% {
+      transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .iconed-link {

@@ -2,6 +2,15 @@
   <div class="app-container">
     <router-view name="header" />
     <router-view />
+    <div :class="['notify-container', {active: isTooltipShown}]">
+      <div class="notification">
+        <notification 
+          :text="tooltipText" 
+          :type="tooltipType"
+          @click="hideTooltip"
+         />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,6 +32,9 @@ export default {
       tooltipType: (state) => state.type,
     }),
   },
+  created() {
+    
+  }
 };
 </script>
 

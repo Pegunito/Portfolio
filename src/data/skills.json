@@ -6,12 +6,12 @@
         {
           "id": 1,
           "title": "HTML",
-          "percent": 32
+          "percent": 60
         },
         {
           "id": 2,
           "title": "CSS",
-          "percent": 76
+          "percent": 70
         },
         {
           "id": 3,
@@ -21,7 +21,7 @@
         {
           "id": 4,
           "title": "Vue",
-          "percent": 50
+          "percent": 10
         }
       ]
     },
@@ -32,22 +32,22 @@
         {
           "id": 10,
           "title": "GIT",
-          "percent": 15
+          "percent": 50
         },
         {
           "id": 11,
           "title": "Terminal",
-          "percent": 25
+          "percent": 60
         },
         {
           "id": 12,
-          "title": "Gulp",
-          "percent": 55
+          "title": "English",
+          "percent": 70
         },
         {
           "id": 13,
           "title": "Webpack",
-          "percent": 75
+          "percent": 10
         }
       ]
     }

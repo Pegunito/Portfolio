@@ -7,11 +7,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
   const publicPath ="/Portfolio/dist/";
-
   const pcss = {
     test: /\.(p|post|)css$/,
     use: [
@@ -20,22 +18,21 @@ module.exports = (env, argv) => {
       "postcss-loader",
     ],
   };
-
   const vue = {
     test: /\.vue$/,
     loader: "vue-loader",
   };
-
   const js = {
     test: /\.js$/,
     loader: "babel-loader",
     exclude: /node_modules/,
     options: {
+      
       presets: ["@babel/preset-env"],
-      plugins: ["@babel/plugin-syntax-dynamic-import"],
+      plugins: ["@babel/plugin-transform-runtime",
+      "@babel/plugin-syntax-dynamic-import"],
     },
   };
-
   const files = {
     test: /\.(png|jpe?g|gif|woff2?)$/i,
     loader: "file-loader",
@@ -43,7 +40,6 @@ module.exports = (env, argv) => {
       name: "[hash].[ext]",
     },
   };
-
   const svg = {
     test: /\.svg$/,
     use: [
@@ -70,7 +66,6 @@ module.exports = (env, argv) => {
       },
     ],
   };
-
   const pug = {
     test: /\.pug$/,
     oneOf: [
@@ -83,7 +78,6 @@ module.exports = (env, argv) => {
       },
     ],
   };
-
   const config = {
     entry: {
       main: "./src/main.js",
@@ -130,7 +124,6 @@ module.exports = (env, argv) => {
     ],
     devtool: "#eval-source-map",
   };
-
   if (isProductionBuild) {
     config.devtool = "none";
     config.plugins = (config.plugins || []).concat([
@@ -145,9 +138,7 @@ module.exports = (env, argv) => {
         chunkFilename: "[contenthash].css",
       }),
     ]);
-
     config.optimization = {};
-
     config.optimization.minimizer = [
       new TerserPlugin({
         cache: true,
@@ -157,6 +148,5 @@ module.exports = (env, argv) => {
       new OptimizeCSSAssetsPlugin({}),
     ];
   }
-
   return config;
 };

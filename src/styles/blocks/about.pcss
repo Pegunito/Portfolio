@@ -5,19 +5,22 @@
 }
 
 .about__container {
+    opacity: 0;
+    transform: translateY(20%);
+    transition: .5s all ease-in-out;
     display: flex;
-    padding: 10% 16%;
+    padding: 5% 16%;
 
     @include desktop {
-        padding: 398px 100px 252px 61px;
+        padding: 98px 50px 152px 31px;
     }
 
     @include tablets {
-        padding: 260px 20px 148px 20px;
+        padding: 60px 20px 48px 20px;
     }
 
     @include phones {
-        padding: 0px 0px 105px 0px;
+        padding: 0px 0px 100px 0px;
         display: flex;
         flex-direction: column;
     }
@@ -28,7 +31,6 @@
     font-size: 16px;
     font-weight: 400;
     color: #464d62;
-    opacity: 0.5;
 }
 
 .about__title {

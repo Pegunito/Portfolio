@@ -9,7 +9,7 @@ block content
 
         include ./templates/components/hero.pug
 
-    section.about
+    section(data-section-id="about").about
       .container.about__container
         .about__user.user
         
@@ -18,28 +18,27 @@ block content
         include ./templates/components/about.pug
 
   .middle-section
-    section.values
+    section(data-section-id="values").values
       .container.values__container
         .values__info
           .values__title
               h3 Чем я могу быть полезен вам
           .values__content
-              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              p Я очень много учусь и получаю знания каждый день! Ниже приведены мои навыки и умения.
         .values__img
           +image("decor/bag.jpg", 'user__avatar-pic')
         .values__widget
           #skills-component
 
-    section.works
+    section(data-section-id="works").works
       .container.works__container
         #works-component
         
-    section.reviews
+    section(data-section-id="reviews").reviews
       .container.reviews__container
         #reviews-component
 
-    footer.footer
-      include ./templates/components/footer.pug
+
 
           
 

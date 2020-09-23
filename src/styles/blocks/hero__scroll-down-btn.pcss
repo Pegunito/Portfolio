@@ -1,3 +1,29 @@
+.hero__bottom-buttons {
+  animation: bounce 2s linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(20%);
+  }
+
+  50% {
+      transform: translateY(0);
+  }
+
+  75% {
+      transform: translateY(-20%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .hero__scroll-down-btn {
   display: flex;
   align-items: center;
